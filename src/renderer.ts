@@ -29,3 +29,13 @@
 import './index.css';
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+const form = document.getElementById('userForm');
+form.addEventListener('submit', formSubmitHandler);
+
+function formSubmitHandler(event: SubmitEvent) {
+  event.preventDefault();  // prevent the form from submitting in the traditional way
+  const username = (document.getElementById('username') as HTMLInputElement).value;
+  connect(username);
+  form.removeEventListener('submit', formSubmitHandler);  
+}
