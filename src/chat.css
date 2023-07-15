@@ -1,0 +1,20 @@
+.chat {
+  height: 400px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  background-color:azure;
+  padding: 16px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body, html { 
+  margin: 0;
+  height: 100%;
+}

@@ -3,6 +3,8 @@
 
 import { contextBridge, ipcRenderer } from "electron";
 
-contextBridge.exposeInMainWorld('connect', function(username: string) {
-    ipcRenderer.send('connect', username)
+contextBridge.exposeInMainWorld('electron', {
+    connect: function (username: string) {
+        ipcRenderer.send('connect', username)
+    }
 })

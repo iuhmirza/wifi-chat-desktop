@@ -36,6 +36,6 @@ form.addEventListener('submit', formSubmitHandler);
 function formSubmitHandler(event: SubmitEvent) {
   event.preventDefault();  // prevent the form from submitting in the traditional way
   const username = (document.getElementById('username') as HTMLInputElement).value;
-  connect(username);
+  window.electron.connect(username);
   form.removeEventListener('submit', formSubmitHandler);  
 }
