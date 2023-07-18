@@ -26,16 +26,30 @@
  * ```
  */
 
+import { Service } from 'bonjour-service';
 import './index.css';
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+document.addEventListener('DOMContentLoaded', function(event) {
+  const form = document.getElementById('userForm')
+  form.addEventListener('submit', formSubmitHandler)
 
-const form = document.getElementById('userForm');
-form.addEventListener('submit', formSubmitHandler);
+  window.electron.onServer(function(event: Event, name: string, index: Number) {
+    const l = document.createElement('label')
+    l.textContent = name
+    const s = document.createElement('input')
+    s.type = 'radio'
+    s.name = 'radio'
+    s.value = index.toString()
+    s.required = true
+    l.appendChild(s)
+    form.appendChild(l)
+  })
 
-function formSubmitHandler(event: SubmitEvent) {
-  event.preventDefault();  // prevent the form from submitting in the traditional way
-  const username = (document.getElementById('username') as HTMLInputElement).value;
-  window.electron.connect(username);
-  form.removeEventListener('submit', formSubmitHandler);  
-}
+  function formSubmitHandler(event: SubmitEvent) {
+    event.preventDefault()
+    const username = (document.getElementById('username') as HTMLInputElement).value
+    const server = (document.querySelector('input[name="radio"]:checked') as HTMLInputElement).value
+    window.electron.connect(username, server)
+    form.removeEventListener('submit', formSubmitHandler)  
+  }
+})

@@ -4,7 +4,10 @@
 import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld('electron', {
-    connect: function (username: string) {
-        ipcRenderer.send('connect', username)
+    connect: function (username: string, index: number) {
+        ipcRenderer.send('connect', username, index)
+    },
+    onServer: function(fn: any) {
+        ipcRenderer.on('server', fn)
     }
 })
