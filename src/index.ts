@@ -37,10 +37,8 @@ const createWindow = (): void => {
       mainWindow.webContents.send('server', service.name, servers.length)
       servers.push(service)
     })
-
-    browser.start()
-
   })
+  
   ipcMain.on('connect', function () {
     mainWindow.close()
   })

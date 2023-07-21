@@ -1,20 +1,104 @@
-.chat {
-  height: 400px;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  display: flex;
-  flex-direction: column;
-  background-color:azure;
-  padding: 16px;
+/* CSS file for Wifi Chat */
+
+:root {
+  --primary-color: #4a56e2;
+  --secondary-color: #f3f4f6;
+  --text-color: #1f2937;
+  --light-color: #fff;
+  --dark-color: #1e40af;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-body, html { 
+body.main {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   margin: 0;
-  height: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  background-color: var(--light-color);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+}
+
+.username {
+  margin-bottom: 20px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.username-username {
+  color: var(--dark-color);
+}
+
+.chat {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--secondary-color) ;
+  border-bottom: 1px solid var(--secondary-color) ;
+  height: 350px;
+  padding: 10px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+.chat li {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  padding-left: 0px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  max-width: 100%;
+}
+
+.chat li span {
+  border-radius: 4px;
+  padding: 5px;
+  margin-right: 5px;
+  background-color: #e0e0e0;
+}
+
+.message-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-label {
+  margin-right: 10px;
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  margin-right: 10px;
+}
+
+.submit-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--dark-color);
 }

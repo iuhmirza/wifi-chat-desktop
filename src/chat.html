@@ -7,14 +7,15 @@
 </head>
 
 <body class="main">
-  <p id="username"></p>
-  <div id="chat" class="chat">
+  <div class="container">
+    <h1 id="username" class="username"></h1>
+    <ul id="chat" class="chat">
+    </ul>
+    <form id="messageForm" class="message-form">
+      <label for="message" class="message-label">Message</label>
+      <input type="text" name="message" id="message" class="message-input" required>
+      <input type="submit" value="Send" class="submit-button">
+    </form>
   </div>
-  <form id="messageForm">
-    <label for="message">Message</label>
-    <input type="text" name="message" id="message" required>
-    <input type="submit" value="Send">
-  </form>
 </body>
-
 </html>

@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <title>Hello World!</title>
   </head>
-  <body>
-    <h1>Wifi Chat</h1>
-    <ul></ul>
-    <form id="userForm">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" required>
-      <input type="submit" value="Connect">
-      <br>
-    </form>
+  <body class="main">
+    <div class="container">
+      <h1 class="title">Wifi Chat</h1>
+      <form id="userForm" class="user-form">
+        <div class="input-group">
+          <label for="username" class="username-label">Username</label>
+          <input type="text" name="username" id="username" class="username-input" required>
+        </div>
+        <input type="submit" value="Connect" class="connect-button">
+      </form>
+    </div>
   </body>
 </html>

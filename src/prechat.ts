@@ -9,5 +9,5 @@ contextBridge.exposeInMainWorld('electron', {
   },
   sendMsg: function(username: string, content: string) {
     ipcRenderer.send('sendMsg', username, content)
-  }
+  },
 })

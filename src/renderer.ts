@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   window.electron.onServer(function(event: Event, name: string, index: Number) {
     const l = document.createElement('label')
-    l.textContent = name
     const s = document.createElement('input')
     s.type = 'radio'
     s.name = 'radio'
     s.value = index.toString()
     s.required = true
     l.appendChild(s)
+    l.appendChild(document.createTextNode(name))
     form.appendChild(l)
   })
 
